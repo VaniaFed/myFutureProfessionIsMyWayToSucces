@@ -1,0 +1,19 @@
+// Make test with nib when there'd be more overrides
+border-radius()
+  -webkit-border-radius: arguments
+  border-radius: arguments
+
+@import "../../if-ie"
+
+.test1
+  width: 10px
+  border-radius: 5px
+  text-shadow: 0 1px red
+
+ie = true
+@import "../../if-ie" // For the vendor prefixes overriden, import must be done after setting ie variable
+
+.test2
+  width: 10px
+  border-radius: 5px
+  text-shadow: 0 1px red
